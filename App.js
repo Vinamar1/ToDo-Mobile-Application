@@ -1,14 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import LandingPage from './screens/LandingPage'
+import CreateToDoList from './components/CreateToDoList'
+import ToDoList from './components/TodoList'
+import Database from './services/Database'
+import 'react-native-gesture-handler';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+const Stack = createStackNavigator();
+
+export default class App extends Component {
+
+  constructor() {
+    Database.init();
+    super();
+  }
+
+  createHomeStack = () =>
+    <Stack.Navigator>
+      <Stack.Screen name='Create ToDo' component={LandingPage} />
+    </Stack.Navigator>
+
+  render() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="LandingPage">
+          <Stack.Screen name="Create ToDo" component={LandingPage} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
