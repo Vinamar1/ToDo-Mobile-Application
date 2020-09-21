@@ -13,7 +13,7 @@ export default {
       try {
          console.log('Creating database tables');
          db.transaction(tx => {
-            tx.executeSql("CREATE TABLE IF NOT EXISTS saved_task (id VARCHAR NOT NULL, taskName VARCHAR NOT NULL, taskCreatedAt TEXT, completedTasks VARCHAR NOT NULL, taskCategory VARCHAR NOT NULL, taskDesc VARCHAR NOT NULL )")
+            tx.executeSql("CREATE TABLE IF NOT EXISTS saved_task (id VARCHAR NOT NULL, taskName VARCHAR NOT NULL, taskCreatedAt TEXT, completedTasks VARCHAR NOT NULL, taskCategory VARCHAR NOT NULL, taskDesc VARCHAR NOT NULL, icon VARCHAR NOT NULL, iconFont VARCHAR NOT NULL, colorCode VARCHAR NOT NULL )")
             // tx.executeSql("DROP TABLE saved_task")
          });
       }

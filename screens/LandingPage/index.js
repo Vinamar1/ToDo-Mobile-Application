@@ -20,8 +20,8 @@ export default class LandingPage extends Component {
 
    render() {
       return (
-         <Tab.Navigator activeColor="#2196f3"
-            style={{ backgroundColor: 'tomato' }} initialRouteName="CreateToDoList">
+         <Tab.Navigator activeColor="#000"
+            style={{ backgroundColor: '#fff' }} initialRouteName="CreateToDoList">
 
             <Tab.Screen
                name="Home"
