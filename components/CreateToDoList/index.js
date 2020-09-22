@@ -457,14 +457,14 @@ export default class CreateToDoList extends Component {
                   value={this.state.taskDesc}
                   onChangeText={(desc) => this._onTextChange(desc)}
                />
-               {/* <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 30, marginBottom: 30 }}>
+               <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 30, marginBottom: 30 }}>
                   <Text style={{ color: '#838383', fontWeight: 'bold', marginBottom: 10 }}>
                      Remind me next month
    </Text>
                   <Switch
                      value={this.state.switchValue}
                      onValueChange={(switchValue) => this.setState({ switchValue })} />
-               </View> */}
+               </View>
                <TouchableOpacity
                   activeOpacity={1}
                   onPress={() => this.addTaskAndCloseModal(this.state.taskName, this.state.taskDesc, this.state.icon, this.state.iconFont, this.state.colorCode)}
